@@ -1,0 +1,7 @@
+
+minio:
+  endpoint: http://localhost:9000
+  accesskey: minioadmin
+  secretkey: minioadmin
+  bucketName: blog
+  enable: true // 是否打开minio

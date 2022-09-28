@@ -1,0 +1,19 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: blog-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: admin
+          uri: http://localhost:8889/admin
+          predicates:
+            - Path=/admin
+        - id: api
+          uri: http://localhost:8080
+          predicates:
+            - Path=/
+        - id: swagger
+
