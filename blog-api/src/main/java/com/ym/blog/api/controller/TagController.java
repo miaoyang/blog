@@ -5,6 +5,7 @@ import com.ym.blog.api.service.TagService;
 import com.ym.blog.api.vo.Result;
 
 import com.ym.blog.api.vo.TagVo;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +22,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/tags")
+@Api(tags = "类别管理")
 public class TagController {
 
     @Autowired

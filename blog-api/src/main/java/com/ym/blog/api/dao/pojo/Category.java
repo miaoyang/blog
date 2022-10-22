@@ -1,5 +1,6 @@
 package com.ym.blog.api.dao.pojo;
 
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Data;
  * @Desc:
  */
 @Data
+@ApiModel("类别表")
 public class Category {
     private Long id;
 

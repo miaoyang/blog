@@ -5,6 +5,7 @@ import com.ym.blog.api.service.ICommentService;
 import com.ym.blog.api.vo.CommentVo;
 import com.ym.blog.api.vo.Result;
 import com.ym.blog.api.vo.params.CommentParams;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/comments")
 @Slf4j
+@Api(tags = "评论管理")
 public class CommentController {
 
     @Autowired

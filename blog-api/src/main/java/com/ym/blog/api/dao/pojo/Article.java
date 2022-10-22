@@ -2,6 +2,7 @@ package com.ym.blog.api.dao.pojo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import io.swagger.annotations.ApiModel;
 import io.swagger.models.auth.In;
 import lombok.Data;
 
@@ -11,6 +12,7 @@ import lombok.Data;
  * @Desc: 文章实体类
  */
 @Data
+@ApiModel("文章表")
 public class Article {
     public static final int Article_TOP = 1;
     public static final int Article_Common = 0;

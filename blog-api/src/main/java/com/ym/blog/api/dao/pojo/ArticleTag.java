@@ -1,5 +1,7 @@
 package com.ym.blog.api.dao.pojo;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiModel;
 import lombok.Data;
 
 /**
@@ -8,6 +10,7 @@ import lombok.Data;
  * @Desc:
  */
 @Data
+@ApiModel("文章tag")
 public class ArticleTag {
     private Long id;
 

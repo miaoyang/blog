@@ -3,6 +3,7 @@ package com.ym.blog.api.controller;
 import com.ym.blog.api.service.CategoryService;
 import com.ym.blog.api.vo.CategoryVo;
 import com.ym.blog.api.vo.Result;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +16,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/categorys")
+@Api(tags = "分类管理")
 public class CategoryController {
 
     @Autowired

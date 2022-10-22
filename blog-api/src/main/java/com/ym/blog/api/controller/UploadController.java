@@ -2,6 +2,7 @@ package com.ym.blog.api.controller;
 
 import com.ym.blog.api.utils.QiniuUtils;
 import com.ym.blog.api.vo.Result;
+import io.swagger.annotations.Api;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,6 +20,7 @@ import java.util.UUID;
  */
 @RestController
 @RequestMapping("/uploads")
+@Api(tags = "用户上传")
 public class UploadController {
 
     @Autowired

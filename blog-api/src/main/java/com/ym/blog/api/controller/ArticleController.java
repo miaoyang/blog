@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/articles")
-@Api("文章")
+@Api(tags = "文章管理")
 public class ArticleController {
     private static final Logger log = LoggerFactory.getLogger(ArticleController.class);
 
@@ -32,31 +32,34 @@ public class ArticleController {
      * @return
      */
     @PostMapping
-    @ApiOperation("首页文章列表")
+    @ApiOperation(value = "首页文章列表")
     public Result listArticle(@RequestBody PageParams params){
 
         return articleService.listArticle(params);
     }
 
     @PostMapping("/hot")
-    @ApiOperation("最热文章")
+    @ApiOperation(value = "最热文章")
     public Result hotArticle(){
         int limit = 6;
         return articleService.hotArticle(limit);
     }
 
     @PostMapping("/new")
+    @ApiOperation(value = "最新文章")
     public Result newArticle(){
         int limit = 6;
         return articleService.newArticle(limit);
     }
 
     @PostMapping("/listArchives")
+    @ApiOperation(value = "根据年月查询出文章")
     public Result listArchives(){
         return articleService.listArchives();
     }
 
     @PostMapping("/view/{id}")
+    @ApiOperation(value = "根据id查询文章")
     public Result findArticleById(@PathVariable("id")Long id){
         log.debug("articleId:{}",id);
         ArticleVo articleVo = articleService.findArticleById(id);
@@ -69,7 +72,7 @@ public class ArticleController {
      * @return
      */
     @PostMapping("/publish")
-    @ApiOperation("发布文章")
+    @ApiOperation(value = "发布文章")
     public Result publish(@RequestBody ArticleParams articleParams){
         ArticleVo articleVo = articleService.publish(articleParams);
         return Result.success(articleVo);
