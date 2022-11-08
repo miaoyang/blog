@@ -3,6 +3,7 @@ package com.ym.blog.api.controller;
 import com.ym.blog.api.service.SysUserService;
 import com.ym.blog.api.vo.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -23,6 +24,7 @@ public class UserController {
     private SysUserService sysUserService;
 
     @GetMapping("/currentUser")
+    @ApiOperation(value = "当前用户")
     public Result currentUser(@RequestHeader("Authorization")String token){
         return sysUserService.findUSerByToken(token);
     }

@@ -4,6 +4,7 @@ import com.ym.blog.api.service.CategoryService;
 import com.ym.blog.api.vo.CategoryVo;
 import com.ym.blog.api.vo.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,12 +31,14 @@ public class CategoryController {
     }
 
     @GetMapping("/detail")
+    @ApiOperation(value = "列出所有分类")
     public Result findAllDetail(){
         List<CategoryVo> categoryVoList = categoryService.findAllDetail();
         return Result.success(categoryVoList);
     }
 
     @GetMapping("/detail/{id}")
+    @ApiOperation(value = "根据id查询分类")
     public Result findCategoryDetailById(@PathVariable("id") Long id){
         CategoryVo categoryVo = categoryService.findCategoryDetailById(id);
         return Result.success(categoryVo);

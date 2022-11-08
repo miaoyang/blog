@@ -3,6 +3,7 @@ package com.ym.blog.api.controller;
 import com.ym.blog.api.utils.QiniuUtils;
 import com.ym.blog.api.vo.Result;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ public class UploadController {
     private QiniuUtils qiniuUtils;
 
     @PostMapping
+    @ApiOperation(value = "上传文件")
     public Result upload(@RequestParam("image") MultipartFile file){
         String fileName = UUID.randomUUID() + "."+ StringUtils.substringAfterLast(file.getOriginalFilename(),".");
         boolean isUpload = qiniuUtils.upload(file, fileName);

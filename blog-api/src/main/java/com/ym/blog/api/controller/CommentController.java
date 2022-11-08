@@ -6,6 +6,7 @@ import com.ym.blog.api.vo.CommentVo;
 import com.ym.blog.api.vo.Result;
 import com.ym.blog.api.vo.params.CommentParams;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,14 @@ public class CommentController {
     private ICommentService commentService;
 
     @GetMapping("/article/{id}")
+    @ApiOperation(value = "通过文章id评论查询")
     public Result comment(@PathVariable("id")Long articleId){
         List<CommentVo> commentVoList = commentService.commentByArticleId(articleId);
         return Result.success(commentVoList);
     }
 
     @PostMapping("/create/change")
+    @ApiOperation(value = "创建")
     public Result createChange(@RequestBody CommentParams commentParams){
         commentService.createChange(commentParams);
         return Result.success();

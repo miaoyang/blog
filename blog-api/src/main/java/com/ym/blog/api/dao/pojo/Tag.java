@@ -1,7 +1,9 @@
 package com.ym.blog.api.dao.pojo;
 
 import io.swagger.annotations.ApiModel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.ToString;
 
 /**
  * @Author: Yangmiao
@@ -9,7 +11,9 @@ import lombok.Data;
  * @Desc:
  */
 @Data
-@ApiModel("tag表")
+@AllArgsConstructor
+@ToString
+@ApiModel(value = "tag表")
 public class Tag {
     private Long id;
 

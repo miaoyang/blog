@@ -7,6 +7,7 @@ import com.ym.blog.api.vo.params.ArticleParams;
 import com.ym.blog.api.vo.params.PageParams;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +61,7 @@ public class ArticleController {
 
     @PostMapping("/view/{id}")
     @ApiOperation(value = "根据id查询文章")
-    public Result findArticleById(@PathVariable("id")Long id){
+    public Result findArticleById(@ApiParam("文章id") @PathVariable("id")Long id){
         log.debug("articleId:{}",id);
         ArticleVo articleVo = articleService.findArticleById(id);
         return Result.success(articleVo);
